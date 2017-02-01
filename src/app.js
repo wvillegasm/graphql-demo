@@ -15,11 +15,12 @@ const app = express(),
 // GraphQL server route
 app.use('/graphql', graphqlHTTP(req => ({
     schema,
-    pretty: true
+    pretty: true,
+    graphiql: true
 })));
 
 // Connect to mongo database
-mongoose.connect('mongodb://localhost/graphql');
+//mongoose.connect('mongodb://localhost/graphql');
 const server = app.listen(PORT, () => {
     console.log(`Listining at port ${PORT}`);
 });
